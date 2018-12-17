@@ -4,7 +4,10 @@ import com.xywei.model.User;
 import com.xywei.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping(value = "/user")
@@ -16,6 +19,9 @@ public class UserController {
     @ResponseBody
     @RequestMapping("/add")
     public int addUser(User user) {
+        //测试@Getter @Setter @ToString 注解
+        System.out.println(user.toString());
+        System.out.println(user.getUserName());
         return userService.addUser(user);
     }
 
